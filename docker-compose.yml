@@ -1,0 +1,14 @@
+services:
+  # Websocket API running on its own container
+  websocket_api:
+    build: ./server
+    command: uvicorn src.app:app --host 0.0.0.0 --port 8000 --reload
+    restart: unless-stopped
+    environment:
+     - MONGO_URI="mongodb+srv://abhishekthis100:vO6Yu28m5B4hpFrA@chat-app-cluster.guzpiiz.mongodb.net/?retryWrites=true&w=majority"
+    volumes:
+      - ./server/src:/app/src
+    ports:
+      - "8000:8000"
+    depends_on:
+      - mongodb

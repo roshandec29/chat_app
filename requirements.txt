@@ -1,0 +1,12 @@
+aioredis
+fastapi
+imagekitio
+uvicorn
+websockets
+uuid
+pymongo
+colorlog
+pydantic
+pydantic-settings
+python-dotenv
+python-multipart
